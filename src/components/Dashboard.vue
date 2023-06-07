@@ -1,7 +1,7 @@
 <template>
   <div class="container py-5 px-3 px-sm-0 px-lg-5">
     <h1 class="fw-bold fs-2 mb-4 text-uppercase">My Timesheet</h1>
-    <div class="bg-white shadow-sm rounded py-4 px-3 py-lg-5">
+    <div class="bg-white shadow-sm rounded py-4 px-3 px-lg-5 py-lg-5">
       <div class="d-md-flex align-items-center justify-content-between">
         <div class="col-lg-9 col-xl-6 d-md-flex">
           <select class="form-select">
@@ -23,7 +23,7 @@
             </select>
           </div>
         </div>
-        <button class="btn-blue rounded-pill mt-3 mt-md-0"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
+        <button class="btn-blue rounded-pill mt-3 mt-md-0" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
       </div>
       <table class="table shadow-sm mt-4">
         <thead>
@@ -74,8 +74,10 @@
 </template>
 
 <script>
+import addModal from "./AddModal";
 
 export default {
   name: "dashboardPage",
+  components: { addModal }
 };
 </script>
