@@ -5,6 +5,7 @@ This is a sample application that demonstrates a time tracking tool for a team.
 ## Tech Stack
 * Node.js
 * Vue 3
+* Vue-router 4
 * Bootstrap 5
 
 ## Features
