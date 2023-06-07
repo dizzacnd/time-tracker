@@ -4,7 +4,7 @@ h1, h3, h5 {
 }
 /* END: Heading Text Styling */
 
-/* START: Select Input Styling */
+/* START: Link Styling */
 a {
     color: var(--blue);
     text-decoration: none;
@@ -13,24 +13,23 @@ a:hover {
     color: var(--dark-blue);
     text-decoration: underline;
 }
-/* END: Select Input Styling */
+/* END: Link Styling */
 
 /* START: Buttons Styling */
 button {
     transition: all 0.3s;
-}
-
-.btn-white-border {
-    border: 2px solid var(--white);
-    background-color: transparent;
     border-radius: 6px;
     padding: 7px 20px;
-    color: var(--white);
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
 }
 
+.btn-white-border {
+    border: 2px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
 .btn-white-border:hover {
     background-color: var(--white);
     color: var(--dark-blue);
@@ -39,17 +38,12 @@ button {
 .btn-blue {
     border: 2px solid var(--dark-blue);
     background-color: var(--dark-blue);
-    border-radius: 6px;
-    padding: 7px 20px;
     color: var(--white);
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
 }
-
 .btn-blue:hover {
     background-color: var(--blue);
     border-color: var(--blue);
+    color: var(--white);
 }
 /* END: Buttons Styling */
 
@@ -69,4 +63,60 @@ button {
     border-color: var(--light-gray);
 }
 /* END: Input Group Styling */
+
+/* START: Select Input Styling */
+.form-select {
+    background-color: #FCFCFC;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+}
+select {
+    cursor: pointer;
+}
+/* END: Select Input Styling */
+
+/* START: Table Styling */
+table {
+    /* border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid grey; */
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+/* Rounded corners */
+table thead th:first-of-type {
+    border-top-left-radius: 10px;
+}
+table thead th:last-of-type {
+    border-top-right-radius: 10px;
+}
+table tbody tr:last-of-type td {
+    border-bottom: none;
+}
+table tbody tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+table tbody tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+table thead th {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 10px 20px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 10px 20px;
+}
+
+table thead th:nth-child(2), table tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+table tr.table-active {
+    --bs-table-bg-state: #f4f6f8;
+}
+/* END: Table Styling */
 

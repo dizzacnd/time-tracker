@@ -15,6 +15,8 @@
 
 body {
     background-color: var(--light-blue);
+    /* background: linear-gradient(180deg, rgba(252,253,254,1) 0%, rgba(243,252,255,1) 67%, rgba(228,243,249,1) 100%);
+    min-height: 100vh; */
 }
 
 /* START: Signup Form Styling */
@@ -27,3 +29,9 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 /* END: Signup Form Styling */
+
+/* START: Dashboard Styling */
+select.year {
+    width: 130px;
+}
+/* END: Dashboard Styling */
