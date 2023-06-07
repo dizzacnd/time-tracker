@@ -4,45 +4,25 @@
 			<div class="d-lg-flex justify-content-between align-items-center">
         <h1 class="fw-bold fs-4 mb-0">
           <router-link to="/dashboard" class="me-2"><i class="fa-solid fa-angle-left"></i></router-link>
-          Project ABC | Monday Jun 5 - Jun 11 2023
+          {{ currentProject.name }} | {{ currentLog.day }}
         </h1>
         <button class="btn-blue rounded-pill mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
 			</div>
       <div class="table-responsive-sm">
         <table class="table shadow-sm mt-4 daily">
           <thead class="text-center">
-            <th>Time</th>
-            <th>Description</th>
-            <th>Hours</th>
-            <th></th>
+            <tr>
+              <th>Time</th>
+              <th>Description</th>
+              <th>Hours</th>
+              <th></th>
+            </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>8:00AM - 12:10PM</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-              <td>4:10</td>
-              <td>
-                <div class="d-flex">
-                  <button class="btn-transparent"><i class="fa-solid fa-pen-to-square me-1"></i></button>
-                  <button class="btn-transparent"><i class="fa-solid fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>1:00PM - 3:30PM</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-              <td>2:30</td>
-              <td>
-                <div class="d-flex">
-                  <button class="btn-transparent"><i class="fa-solid fa-pen-to-square me-1"></i></button>
-                  <button class="btn-transparent"><i class="fa-solid fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>4:00PM - 6:20PM</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-              <td>1:20</td>
+            <tr v-for="(log, index) in currentLog.logs" :key="index">
+              <td>{{ log.time }}</td>
+              <td>{{ log.description }}</td>
+              <td>{{ log.hours }}</td>
               <td>
                 <div class="d-flex">
                   <button class="btn-transparent"><i class="fa-solid fa-pen-to-square me-1"></i></button>
@@ -64,6 +44,25 @@ import addModal from "./AddModal";
 
 export default {
   name: "ViewDate",
-  components: { addModal }
+  components: { addModal },
+  data() {
+    return {
+      storedProjects: {},
+      storedLogs: {},
+      logId: null,
+      currentLog: [],
+      projectId: null,
+      currentProject: [],
+    };
+  },
+  mounted() {
+    this.storedProjects = JSON.parse(localStorage.getItem("projects"));
+    this.storedLogs = JSON.parse(localStorage.getItem("logs"));
+    
+    this.logId = this.$router.currentRoute._value.params.id;
+    this.currentLog = this.storedLogs[this.logId - 1];
+
+    this.currentProject = this.storedProjects[this.currentLog.project_id - 1];
+  },
 };
 </script>

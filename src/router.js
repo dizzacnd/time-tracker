@@ -14,7 +14,7 @@ const routes =  [
     component: () => import("./components/Dashboard")
   },
   {
-    path: "/view",
+    path: "/view/:id",
     alias: "/view",
     name: "View Date",
     component: () => import("./components/ViewDate")
