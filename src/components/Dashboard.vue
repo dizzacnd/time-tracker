@@ -25,10 +25,12 @@
         </div>
         <button class="btn-blue rounded-pill mt-3 mt-md-0" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
       </div>
-      <table class="table shadow-sm mt-4">
+      <table class="table shadow-sm mt-4 weekly">
         <thead>
-          <th>Date</th>
-          <th>Hours</th>
+          <tr>
+            <th>Date</th>
+            <th>Hours</th>
+          </tr>
         </thead>
         <tbody>
           <tr>

@@ -13,6 +13,12 @@ const routes =  [
     name: "Dashboard",
     component: () => import("./components/Dashboard")
   },
+  {
+    path: "/view",
+    alias: "/view",
+    name: "View",
+    component: () => import("./components/ViewDate")
+  },
 ];
 
 const router = createRouter({
