@@ -52,6 +52,7 @@
             </tr>
           </tbody>
         </table>
+        <h5 class="text-center mt-4 fw-bolder text-uppercase">Total hours: 8</h5>
       </div>
 			<addModal/>
 		</div>
