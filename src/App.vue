@@ -20,42 +20,11 @@ export default {
     // Sample Data
     var projects = [{"id":"1", "name":"Project ABC"}, {"id":"2", "name":"Project DEF"}, {"id":"3", "name":"Project JHI"}];
     var weeks = [{"id":"1", "name":"Week 1"}, {"id":"2", "name":"Week 2"}, {"id":"3", "name":"Week 3"}];
-    var logs = [{
-        "id":"1", 
-        "project_id":"1", 
-        "day":"Monday", 
-        "week_id":"3", 
-        "hours": 8,
-        logs: [{
-          "time": "8:00AM - 12:00PM",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "hours": 4
-        }, {
-          "time": "1:00PM - 5:00PM",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "hours": 4
-        }]
-      }, {
-        "id":"2", 
-        "project_id":"1", 
-        "day":"Tuesday", 
-        "week_id":"3", 
-        "hours": 8,
-        logs: [{
-          "time": "8:00AM - 12:00PM",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "hours": 4
-        }, {
-          "time": "1:00PM - 5:00PM",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "hours": 4
-        }]
-      }];
+    
 
     // Store sample data to local storage
     localStorage.setItem("projects", JSON.stringify(projects));
     localStorage.setItem("weeks", JSON.stringify(weeks));
-    localStorage.setItem("logs", JSON.stringify(logs));
   }
 }
 </script>

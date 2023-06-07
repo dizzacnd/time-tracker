@@ -23,19 +23,19 @@
         <thead>
           <tr>
             <th>Date</th>
+            <th>Description</th>
             <th>Hours</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(log, index) in storedLogs" :key="index">
-            <td>
-              <router-link :to="'/view/' + log.id">{{ log.day }}</router-link>
-            </td>
+            <td>{{ log.created_at }}</td>
+            <td>{{ log.description }}</td>
             <td>{{ log.hours }}</td>
           </tr>
         </tbody>
       </table>
-      <h5 class="text-center mt-4 fw-bolder text-uppercase">Total hours: 16</h5>
+      <h5 class="text-center mt-4 fw-bolder text-uppercase">Total hours: 0</h5>
     </div>
     <addModal/>
   </div>
