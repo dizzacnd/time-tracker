@@ -30,39 +30,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="(log, index) in storedLogs" :key="index">
             <td>
-              <router-link to="/view" class="">Monday, June 5</router-link>
+              <router-link :to="'/view/' + log.id">{{ log.day }}</router-link>
             </td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>
-              <router-link to="/view" class="">Tuesday, June 6</router-link>
-            </td>
-            <td>8</td>
-          </tr>
-          <tr class="table-active">
-            <td>
-              <router-link to="/view" class="">Wednesday, June 7</router-link>
-            </td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>Thursday, June 8</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>Friday, June 9</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>Saturday, June 10</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>Sunday, June 11</td>
-            <td>0</td>
+            <td>{{ log.hours }}</td>
           </tr>
         </tbody>
       </table>
@@ -81,10 +53,12 @@ export default {
   data() {
     return {
       storedProjects: {},
+      storedLogs: {},
     };
   },
   mounted() {
     this.storedProjects = JSON.parse(localStorage.getItem("projects"));
+    this.storedLogs = JSON.parse(localStorage.getItem("logs"));
   },
 };
 </script>

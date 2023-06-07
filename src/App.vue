@@ -17,8 +17,11 @@ export default {
     }
   },
   mounted() {
-    var projects = [{"id":"1", "name":"Project ABC"}, {"id":"2", "name":"Project DEF"}, {"id":"3", "name":"Project JHI"}, ];
+    var projects = [{"id":"1", "name":"Project ABC"}, {"id":"2", "name":"Project DEF"}, {"id":"3", "name":"Project JHI"}];
+    var logs = [{"id":"1", "day":"Monday", "hours": 8}, {"id":"2", "day":"Tuesday", "hours": 8}];
+
     localStorage.setItem("projects", JSON.stringify(projects));
+    localStorage.setItem("logs", JSON.stringify(logs));
   }
 }
 </script>
