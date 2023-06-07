@@ -9,15 +9,12 @@
           </select>
           <div class="d-flex col-12 col-md-6 ms-md-3 mt-3 mt-md-0">
             <select class="form-select me-3">
-              <option value="">May 15 - May 21</option>
-              <option value="">May 22 - May 28</option>
-              <option value="">May 29 - Jun 4</option>
-              <option value="" selected>Jun 5 - Jun 11</option>
+              <option v-for="(week, index) in storedWeeks" :key="index" value="week.id" :selected="week.id==3">{{ week.name }}</option>
             </select>
-            <select class="form-select year">
+            <!-- <select class="form-select year">
               <option value="">2022</option>
               <option value="" selected>2023</option>
-            </select>
+            </select> -->
           </div>
         </div>
         <button class="btn-blue rounded-pill mt-3 mt-md-0" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
@@ -53,11 +50,13 @@ export default {
   data() {
     return {
       storedProjects: {},
+      storedWeeks: {},
       storedLogs: {},
     };
   },
   mounted() {
     this.storedProjects = JSON.parse(localStorage.getItem("projects"));
+    this.storedWeeks = JSON.parse(localStorage.getItem("weeks"));
     this.storedLogs = JSON.parse(localStorage.getItem("logs"));
   },
 };

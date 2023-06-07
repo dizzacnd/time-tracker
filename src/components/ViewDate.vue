@@ -4,7 +4,7 @@
 			<div class="d-lg-flex justify-content-between align-items-center">
         <h1 class="fw-bold fs-4 mb-0">
           <router-link to="/dashboard" class="me-2"><i class="fa-solid fa-angle-left"></i></router-link>
-          {{ currentProject.name }} | {{ currentLog.day }}
+          {{ currentProject.name }} | {{ currentLog.day }} {{ currentWeek.name }}
         </h1>
         <button class="btn-blue rounded-pill mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus me-1"></i> Add Time</button>
 			</div>
@@ -49,20 +49,26 @@ export default {
     return {
       storedProjects: {},
       storedLogs: {},
+      storedWeeks: {},
       logId: null,
       currentLog: [],
       projectId: null,
-      currentProject: [],
+      currentProject: {},
+      weekId: null,
+      currentWeek: [],
     };
   },
   mounted() {
     this.storedProjects = JSON.parse(localStorage.getItem("projects"));
+    this.storedWeeks = JSON.parse(localStorage.getItem("weeks"));
     this.storedLogs = JSON.parse(localStorage.getItem("logs"));
     
     this.logId = this.$router.currentRoute._value.params.id;
     this.currentLog = this.storedLogs[this.logId - 1];
 
     this.currentProject = this.storedProjects[this.currentLog.project_id - 1];
+
+    this.currentWeek = this.storedWeeks[this.currentLog.week_id - 1];
   },
 };
 </script>

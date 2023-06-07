@@ -17,11 +17,14 @@ export default {
     }
   },
   mounted() {
+    // Sample Data
     var projects = [{"id":"1", "name":"Project ABC"}, {"id":"2", "name":"Project DEF"}, {"id":"3", "name":"Project JHI"}];
+    var weeks = [{"id":"1", "name":"Week 1"}, {"id":"2", "name":"Week 2"}, {"id":"3", "name":"Week 3"}];
     var logs = [{
         "id":"1", 
         "project_id":"1", 
         "day":"Monday", 
+        "week_id":"3", 
         "hours": 8,
         logs: [{
           "time": "8:00AM - 12:00PM",
@@ -36,6 +39,7 @@ export default {
         "id":"2", 
         "project_id":"1", 
         "day":"Tuesday", 
+        "week_id":"3", 
         "hours": 8,
         logs: [{
           "time": "8:00AM - 12:00PM",
@@ -48,7 +52,9 @@ export default {
         }]
       }];
 
+    // Store sample data to local storage
     localStorage.setItem("projects", JSON.stringify(projects));
+    localStorage.setItem("weeks", JSON.stringify(weeks));
     localStorage.setItem("logs", JSON.stringify(logs));
   }
 }
