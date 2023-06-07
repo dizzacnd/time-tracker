@@ -1,24 +1,34 @@
-# time-tracker
+# Time Tracker
 
-## Project setup
+This is a sample application that demonstrates a time tracking tool for a team.
+
+## Tech Stack
+* Node.js
+* Vue 3
+* Bootstrap 5
+
+## Features
+* Time Entry with task description
+* Weekly and Daily Summary
+
+## Prerequisites
+
+[Node.js](https://nodejs.org/en/download)
+
+## Getting Started
+
+Clone this `time-tracker` repository.
+
+#### Project Setup
+Run:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Demo can be viewed at [http://localhost:8081](http://localhost:8081)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
