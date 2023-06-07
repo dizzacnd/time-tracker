@@ -15,6 +15,10 @@ export default {
     isHomePage() {
       return  this.$route.path==='/'
     }
+  },
+  mounted() {
+    var projects = [{"id":"1", "name":"Project ABC"}, {"id":"2", "name":"Project DEF"}, {"id":"3", "name":"Project JHI"}, ];
+    localStorage.setItem("projects", JSON.stringify(projects));
   }
 }
 </script>

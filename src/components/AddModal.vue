@@ -7,10 +7,7 @@
         </div>
         <div class="modal-body">
           <select class="form-select mb-3" name="project">
-            <option value="ABC" selected>Project ABC</option>
-            <option value="DEF">Project DEF</option>
-            <option value="HIJ">Project HIJ</option>
-            <option value="KLM">Project KLM</option>
+            <option v-for="(project, index) in storedProjectsModal" :key="index" value="project.id" :selected="project.name==1">{{ project.name }}</option>
           </select>
           <div class="form-floating mb-3">
             <textarea class="form-control" placeholder="Task Description" id="description" rows="6"></textarea>
@@ -38,3 +35,17 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "addModal",
+  data() {
+    return {
+      storedProjectsModal: {},
+    };
+  },
+  mounted() {
+    this.storedProjectsModal = JSON.parse(localStorage.getItem("projects"));
+  },
+};
+</script>

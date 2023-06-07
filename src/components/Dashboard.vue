@@ -5,10 +5,7 @@
       <div class="d-md-flex align-items-center justify-content-between">
         <div class="col-lg-9 col-xl-6 d-md-flex">
           <select class="form-select">
-            <option value="ABC" selected>Project ABC</option>
-            <option value="DEF">Project DEF</option>
-            <option value="HIJ">Project HIJ</option>
-            <option value="KLM">Project KLM</option>
+            <option v-for="(project, index) in storedProjects" :key="index" value="project.id" :selected="project.name==1">{{ project.name }}</option>
           </select>
           <div class="d-flex col-12 col-md-6 ms-md-3 mt-3 mt-md-0">
             <select class="form-select me-3">
@@ -80,6 +77,14 @@ import addModal from "./AddModal";
 
 export default {
   name: "dashboardPage",
-  components: { addModal }
+  components: { addModal },
+  data() {
+    return {
+      storedProjects: {},
+    };
+  },
+  mounted() {
+    this.storedProjects = JSON.parse(localStorage.getItem("projects"));
+  },
 };
 </script>
