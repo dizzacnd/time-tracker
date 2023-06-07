@@ -9,11 +9,11 @@ This is a sample application that demonstrates a time tracking tool for a team.
 
 ## Features
 * Time Entry with task description
-* Weekly and Daily Summary
+* Weekly and daily Summary
 
 ## Prerequisites
 
-[Node.js](https://nodejs.org/en/download)
+* Node.js: [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
 ## Getting Started
 
