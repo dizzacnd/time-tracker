@@ -1,0 +1,72 @@
+/* START: Heading Text Styling */
+h1, h3, h5 {
+    color: var(--dark-blue);
+}
+/* END: Heading Text Styling */
+
+/* START: Select Input Styling */
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+/* END: Select Input Styling */
+
+/* START: Buttons Styling */
+button {
+    transition: all 0.3s;
+}
+
+.btn-white-border {
+    border: 2px solid var(--white);
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 7px 20px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-white-border:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.btn-blue {
+    border: 2px solid var(--dark-blue);
+    background-color: var(--dark-blue);
+    border-radius: 6px;
+    padding: 7px 20px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-blue:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+/* END: Buttons Styling */
+
+/* START: Input Group Styling */
+.input-group .input-group-text {
+    color: var(--dark-blue);
+    background: var(--white);
+}
+
+.input-group input {
+    border-left: none;
+    padding-left: 0;
+}
+
+.input-group input:focus {
+    box-shadow: none;
+    border-color: var(--light-gray);
+}
+/* END: Input Group Styling */
+

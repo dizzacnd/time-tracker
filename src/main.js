@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/js/all.js'
 
 import "./assets/css/styles.css"
 import "./assets/css/components.css"
+import "./assets/css/responsive.css"
 
 import router from './router'
 

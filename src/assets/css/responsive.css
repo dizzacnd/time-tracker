@@ -1,0 +1,8 @@
+/* Large devices (large tablet, laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 992px) {
+    /* START: Signup Form Styling */
+    .signup-div {
+        height: 100vh;
+    }
+    /* END: Signup Form Styling */
+}
